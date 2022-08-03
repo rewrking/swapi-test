@@ -41,6 +41,7 @@ const Styles = styled.div`
 		cursor: pointer;
 		user-select: none;
 		padding: 1rem 0;
+		line-height: 1;
 
 		> input[type="checkbox"] {
 			display: grid;
