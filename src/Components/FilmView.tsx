@@ -38,6 +38,7 @@ const FilmView = ({ films, filmsWookiee }: Props) => {
 	const episode = toRomanNumeral(selected + 1);
 	const releaseDate = new Date(film.release_date).toDateString();
 	const openingCrawl = film.opening_crawl
+		.replace(/.\r\nh/g, "\r\n")
 		.split("\r\n\r\n")
 		.map((paragraph, i) => <p key={i}>{paragraph.replace(/\r\n/g, " ")}</p>);
 
@@ -63,7 +64,7 @@ const FilmView = ({ films, filmsWookiee }: Props) => {
 				<FilmTitle>{film.title}</FilmTitle>
 			</TitleContainer>
 			<CrawlContainer>
-				<Crawl>{openingCrawl}</Crawl>
+				<Crawl className={wookiee ? "wookiee" : undefined}>{openingCrawl}</Crawl>
 			</CrawlContainer>
 		</Styles>
 	);
@@ -125,6 +126,10 @@ const FilmReleaseDate = styled.p`
 const TitleContainer = styled.div`
 	display: block;
 
+	&.wookiee {
+		width: 23rem;
+	}
+
 	@media ${hasMinWidth(0)} {
 		width: 23rem;
 		transform: scale(50%, 200%) perspective(33rem) rotateX(80deg) scale(150%);
@@ -143,6 +148,10 @@ const Crawl = styled.div`
 	display: block;
 	width: 15rem;
 
+	&.wookiee {
+		width: 23rem;
+	}
+
 	> p {
 		font-size: 1rem;
 		text-align: justify;
@@ -155,8 +164,19 @@ const Crawl = styled.div`
 		transform-origin: 50% 0%;
 		transform: scale(200%, 85%) perspective(20rem) rotateX(30deg) scale(50%);
 
+		&.wookiee {
+			width: 23rem;
+			transform: scale(200%, 85%) perspective(20rem) rotateX(30deg) scale(50%);
+		}
+
 		> p {
 			font-size: 1.5rem;
+		}
+
+		&.wookiee {
+			> p {
+				font-size: 1.1rem;
+			}
 		}
 	}
 
@@ -166,6 +186,12 @@ const Crawl = styled.div`
 
 		> p {
 			font-size: 2rem;
+		}
+
+		&.wookiee {
+			> p {
+				font-size: 1.25rem;
+			}
 		}
 	}
 `;
