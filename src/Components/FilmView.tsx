@@ -124,6 +124,7 @@ const FilmTitle = styled.h1`
 const FilmReleaseDate = styled.p`
 	display: block;
 	text-align: center;
+	padding-top: 2rem;
 	padding-bottom: 2rem;
 	color: #555;
 
