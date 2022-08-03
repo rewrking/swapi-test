@@ -36,7 +36,12 @@ const FilmView = ({ films, filmsWookiee }: Props) => {
 
 	const film = wookiee ? filmsWookiee[selected] : films[selected];
 	const episode = toRomanNumeral(selected + 1);
-	const releaseDate = new Date(film.release_date).toDateString();
+	const releaseDate = new Date(film.release_date).toLocaleDateString("en-US", {
+		weekday: "long",
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	});
 	const openingCrawl = film.opening_crawl
 		.replace(/.\r\nh/g, "\r\n")
 		.split("\r\n\r\n")
