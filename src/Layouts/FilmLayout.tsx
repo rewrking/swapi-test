@@ -32,7 +32,7 @@ const Container = styled.div`
 	padding: 0 2rem;
 	background-color: #0a0a0a;
 	background-image: url(/stars.jpg);
-	background-position: 50% 25%;
+	background-position: 50% 32rem;
 	overflow: hidden;
 `;
 
