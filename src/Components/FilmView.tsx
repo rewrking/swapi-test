@@ -57,7 +57,7 @@ const FilmView = ({ films, filmsWookiee }: Props) => {
 			<FilmReleaseDate>
 				Release date:
 				<br />
-				{releaseDate}
+				<span>{releaseDate}</span>
 			</FilmReleaseDate>
 			<TitleContainer>
 				<FilmEpisode>Episode {episode}</FilmEpisode>
@@ -121,6 +121,11 @@ const FilmReleaseDate = styled.p`
 	text-align: center;
 	padding-bottom: 2rem;
 	color: #555;
+
+	> span {
+		color: #cdcdcd;
+		font-weight: 600;
+	}
 `;
 
 const TitleContainer = styled.div`
