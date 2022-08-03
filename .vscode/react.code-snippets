@@ -1,0 +1,48 @@
+{
+	"Separator": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "sep",
+		"body": [
+			"/*****************************************************************************/"
+		]
+	},
+	"React Component": {
+		"prefix": "reactc",
+		"description": "React component",
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"body": [
+			"import React from \"react\";",
+			"",
+			"type Props = React.PropsWithChildren<{}>;",
+			"",
+			"const $1 = ({ children }: Props) => {",
+			"\treturn <div>{children}</div>;",
+			"};",
+			"",
+			"export { $1 };",
+			""
+		]
+	},
+	"Styled React Component": {
+		"prefix": "styledc",
+		"description": "React component with Styled component",
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"body": [
+			"import React from \"react\";",
+			"import styled from \"styled-components\";",
+			"",
+			"type Props = React.PropsWithChildren<{}>;",
+			"",
+			"const $1 = ({ children }: Props) => {",
+			"\treturn <Styles>{children}</Styles>;",
+			"};",
+			"",
+			"export { $1 };",
+			"",
+			"const Styles = styled.div`",
+			"\tdisplay: block;",
+			"`;",
+			""
+		]
+	}
+}
