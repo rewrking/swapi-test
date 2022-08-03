@@ -28,7 +28,7 @@ const FilmView = ({ films, filmsWookiee }: Props) => {
 		return (
 			<Styles>
 				<TitleContainer>
-					<FilmTitle>Error fetching content.</FilmTitle>
+					<FilmTitle>Error fetching films from SWAPI.</FilmTitle>
 				</TitleContainer>
 			</Styles>
 		);
