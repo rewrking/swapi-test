@@ -10,12 +10,22 @@ const Home = (props: FilmLayoutProps) => {
 export default Home;
 
 export async function getServerSideProps(_ctx: NextPageContext) {
-	const swapi = new SwApi();
-	const [films, filmsWookiee] = await Promise.all([swapi.getAllFilms(), swapi.getAllFilmsWookiee()]);
-	return {
-		props: {
-			films,
-			filmsWookiee,
-		},
-	};
+	try {
+		const swapi = new SwApi();
+		const [films, filmsWookiee] = await Promise.all([swapi.getAllFilms(), swapi.getAllFilmsWookiee()]);
+		return {
+			props: {
+				films,
+				filmsWookiee,
+			},
+		};
+	} catch (err: any) {
+		console.log(err);
+		return {
+			props: {
+				films: null,
+				filmsWookie: null,
+			},
+		};
+	}
 }
