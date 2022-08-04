@@ -35,7 +35,8 @@ const FilmView = ({ films, filmsWookiee }: Props) => {
 	}
 
 	const film = wookiee ? filmsWookiee[selected] : films[selected];
-	const episode = toRomanNumeral(selected + 1);
+	console.log(film);
+	const episode = toRomanNumeral(film.episode_id);
 	const releaseDate = new Date(film.release_date).toLocaleDateString("en-US", {
 		weekday: "long",
 		year: "numeric",
